@@ -26,8 +26,12 @@ LOGS =>
 
 */
 
-function triangles() {
-  
+function triangles(num) {
+  let count = "";
+  for (let i = 1; i <= num; i++) {
+    count += "#";
+    console.log(count)
+  }
 }
 
 
@@ -48,7 +52,36 @@ on the number:
 */
 
 function fizzBuzz(start, end) {
-  
+  if (start > end) {
+    for (let i = end; i >= start; i--) {
+      if (i % 3 === 0) {
+        if (i % 5 === 0) {
+          console.log("fizzbuzz")
+        } else {
+          console.log("fizz")
+        }
+      } else if (i % 5 === 0) {
+          console.log("buzz")
+      } else {
+        console.log(i)
+      }
+    }
+  }
+  if (start < end) {
+    for (let i = start; i <= end; i++) {
+      if (i % 3 === 0) {
+        if (i % 5 === 0) {
+          console.log("fizzbuzz")
+        } else {
+          console.log("fizz")
+        }
+      } else if (i % 5 === 0) {
+          console.log("buzz")
+      } else {
+        console.log(i)
+      }
+    }
+  }
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -82,8 +115,37 @@ LOGS =>
 */
 
 function drawChessboard(x) {
-
-
+    let chessboard = "";
+    let evenCount = x;
+    let even = "";
+    while (evenCount > 0) {
+      if (evenCount % 2 === 0) {
+        even += "#"
+      } else {
+        even += " ";
+      }
+      evenCount--
+    }
+    let odd = "";
+    let oddCount = x;
+    while (oddCount > 0) {
+      if (oddCount % 2 === 0) {
+        odd += " "
+      } else {
+        odd += "#";
+      }
+      oddCount--
+    }
+    even += "\n"
+    odd += "\n"
+    for (let i = 1; i <= x; i++) {
+      if (i % 2 === 0) {
+        chessboard += even;
+      } else {
+        chessboard += odd;
+      }
+    }
+    console.log(chessboard);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
