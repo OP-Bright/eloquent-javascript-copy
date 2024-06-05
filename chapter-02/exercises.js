@@ -116,25 +116,25 @@ LOGS =>
 
 function drawChessboard(x) {
     let chessboard = "";
-    let evenCount = x;
+    let evenCount = 0;
     let even = "";
-    while (evenCount > 0) {
+    while (evenCount < x) {
       if (evenCount % 2 === 0) {
         even += "#"
       } else {
         even += " ";
       }
-      evenCount--
+      evenCount++
     }
     let odd = "";
-    let oddCount = x;
-    while (oddCount > 0) {
+    let oddCount = 0;
+    while (oddCount < x ) {
       if (oddCount % 2 === 0) {
         odd += " "
       } else {
         odd += "#";
       }
-      oddCount--
+      oddCount++
     }
     even += "\n"
     odd += "\n"
